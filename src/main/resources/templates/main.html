@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+<h1 class="logo">logo</h1>
+<div class="wrap">
+    <div class="side-menu">
+        <ul th:each="blog : ${blogList}">
+            <li><a href="/veiw" th:text="${blog.title}"></a></li>
+        </ul>
+        <div>
+            <form action="add" method="post">
+                <input type="submit" value="추가">
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <div><input type="text" name="title" value="제목"></div>
+        <textarea name="contetn" cols="30" rows="10">내용</textarea>
+    </div>
+</div>
+</body>
+</html>
